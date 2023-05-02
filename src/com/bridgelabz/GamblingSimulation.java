@@ -4,8 +4,14 @@ import java.util.Random
 //As a Gambler, would start with a stake of $100 every day and bet $1 every game.
 public class GamblingSimulation {
     public static void main(String[] args) {
-        static int stackEveryDay = 100;
+    static int stackEveryDay = 100;
     static int betEveyGame = 1;
+    static int win =0;
+    static int lose =0;
+    static int winMax = 0;
+    static int losMax = 0;
+    static int luckyDay;
+    static int unluckyDay;
 
     public static void main(String[] args) {
         System.out.println("Gambling Simulation Problem");
@@ -50,10 +56,20 @@ public class GamblingSimulation {
                 totalAmount -= stackLost;
                 lostDays +=1;
             }
-            
+
+            if(win > winMax) {
+                winMax = win;
+                luckyDay = days ;
+            }
+            if(lose > losMax) {
+                losMax = lose;
+                unluckyDay = days;
+            }
         }
         System.out.println("Winning Days : "+winDays+" days");
         System.out.println("Loosing Days : "+lostDays+" days");
         System.out.println("Total Win Price: "+totalAmount + "$");
+        System.out.println("The Luckiest Day is "+luckyDay);
+        System.out.println("The Unluckiest Day is "+unluckyDay);
     }
 }
