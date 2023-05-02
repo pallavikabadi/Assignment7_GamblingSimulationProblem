@@ -2,6 +2,9 @@ package com.bridgelabz;
 //As a Gambler, would start with a stake of $100 every day and bet $1 every game.
 
 public class GamblingSimulation {
+    static int stackEveryDay = 100;
+    static int betEveyGame = 1;
+    
     public static void main(String[] args) {
        System.out.println(" Gambling Simulation Problem ");
 
