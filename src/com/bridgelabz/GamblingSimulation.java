@@ -10,21 +10,34 @@ public class GamblingSimulation {
         System.out.println("Stack of Every Day = " + stackEveryDay + "$");
         System.out.println("Bet Amount Every Game = " + betEveyGame + "$");
 
-        Random random =new Random();
-        int bet = random.nextInt(2);
-        if (bet == 1) {
-            System.out.println("Gambler Bet WINS");
+                //Initializing 50% of the Everyday Stock Won and Lost
 
-            stackEveryDay += betEveyGame;       //When the Bet wins Bet amount is added to Stack of Everyday
+        int stackWon = 150;
+        int stackLost = 50;
 
-            System.out.println("Final Stack when Bet Wins = "+stackEveryDay+"$");
-        }else {
-            System.out.println("Gambler Bet Lose");
+        //Gambler if won or lost 50% of the stake, would resign for the day (UC3)
 
-            stackEveryDay -= betEveyGame;       //When the Bet loose Stack of Every day is deducted by bet amount
+        while (stackEveryDay > stackLost && stackEveryDay < stackWon) {
 
-            System.out.println("Final Stack when Bet Lose = "+stackEveryDay+"$");
+             // Gambler make $1 bet either win or loose $1 (UC2).
+             //Using Random to find the Bet wins or lose.
+
+            Random random = new Random();
+            int bet = random.nextInt(2);
+            if (bet == 1) {
+                System.out.println("Gambler Bet WINS");
+
+              //When the Bet wins Bet amount is added to Stack of Everyday
+
+                stackEveryDay += betEveyGame;
+                System.out.println("Final Stack when Bet Wins = " + stackEveryDay + "$");
+            } else {
+                System.out.println("Gambler Bet Lose");
+                //When the Bet loose Stack of Every day is deducted by bet amount
+
+                stackEveryDay -= betEveyGame;
+                System.out.println("Final Stack when Bet Lose = " + stackEveryDay + "$");
+            }
         }
     }
-}
 }
