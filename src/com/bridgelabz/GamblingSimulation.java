@@ -1,4 +1,7 @@
 package com.bridgelabz;
+
+import java.util.Random;
+
 //As a Gambler, would start with a stake of $100 every day and bet $1 every game.
 
 public class GamblingSimulation {
